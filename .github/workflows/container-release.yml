@@ -4,17 +4,8 @@ name: Container Release
 on:
   workflow_call:
     inputs:
-      registry:
-        description: "Registry domain"
-        default: "ghcr.io"
-        required: false
-        type: "string"
-      username:
-        description: "Registry username"
-        required: true
-        type: "string"
-      password:
-        description: "Registry password/token"
+      actor:
+        description: "GitHub actor"
         required: true
         type: "string"
       platforms:
@@ -47,9 +38,9 @@ jobs:
       - name: Login to Packages Container registry
         uses: docker/login-action@v1 
         with:
-          registry: "${{ inputs.registry }}"
-          username: "${{ inputs.username }}"
-          password: "${{ secrets.GITHUB_TOKEN }}"
+          registry: ghcr.io
+          username: ${{ inputs.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Container Reference Name
         id: container_ref
@@ -67,4 +58,4 @@ jobs:
         with:
           platforms: "${{ inputs.platforms }}"
           push: true
-          tags: ${{ inputs.registry }}/${{ github.repository }}:${{ env.ref_name }}
+          tags: ghcr.io/${{ github.repository }}:${{ env.ref_name }}
