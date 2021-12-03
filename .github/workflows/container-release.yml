@@ -49,7 +49,7 @@ jobs:
           # Strip git ref prefix from version
           NAME=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,; s/^v//')
           # Use Docker `latest` tag convention
-          [ "$NAME" == "master" ] && NAME=latest
+          [ "$NAME" == "master" ] && NAME="latest"
           # Expose variables
           echo "ref_name=$NAME" >> $GITHUB_ENV
 
