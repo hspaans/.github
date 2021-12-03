@@ -45,6 +45,7 @@ jobs:
 
       - name: Container Reference Name
         id: container_ref
+        # shellcheck disable=SC2086
         run: |
           # Strip git ref prefix from version
           NAME=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,; s/^v//')
