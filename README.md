@@ -5,6 +5,22 @@
 
 ### Containers
 
+CI for a Container Image
+
+```yaml
+---
+name: Container CI
+
+on:
+  pull_request:
+  schedule:
+    - cron: '22 22 10 * *'
+
+jobs:
+  container-ci:
+    uses: hspaans/.github/.github/workflows/container-ci.yml@v0.2.0
+```
+
 Release a Container Image
 
 ```yaml
