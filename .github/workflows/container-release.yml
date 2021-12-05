@@ -15,6 +15,7 @@ on:
         type: "string"
     secrets:
       GITHUB_TOKEN:
+        description: "GitHub Access Token"
         required: true
 
 jobs:
@@ -48,7 +49,7 @@ jobs:
           # Strip git ref prefix from version
           NAME=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,; s/^v//')
           # Use Docker `latest` tag convention
-          [ "$NAME" == "master" ] && NAME=latest
+          [ "$NAME" == "master" ] && NAME="latest"
           # Expose variables
           echo "ref_name=$NAME" >> $GITHUB_ENV
 
