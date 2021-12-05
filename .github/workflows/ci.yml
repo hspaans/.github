@@ -20,4 +20,5 @@ jobs:
         uses: github/super-linter@v4.8.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_GITHUB_ACTIONS: false
           VALIDATE_NATURAL_LANGUAGE: false
