@@ -14,7 +14,7 @@ on:
         required: false
         type: "string"
     secrets:
-      GITHUB_TOKEN:
+      access_token:
         description: "GitHub Access Token"
         required: true
 
@@ -41,7 +41,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ inputs.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.access_token }}
 
       - name: Container Reference Name
         id: container_ref
