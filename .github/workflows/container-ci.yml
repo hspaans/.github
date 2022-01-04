@@ -5,8 +5,22 @@ on:
   workflow_call:
 
 jobs:
-  container-ci:
-    name: Container CI
+  super-linter:
+    name: Lint Code Base
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Lint Code Base
+        uses: github/super-linter@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_GITHUB_ACTIONS: false
+
+  build-test:
+    name: Container Test Build
     runs-on: ubuntu-latest
 
     steps:
