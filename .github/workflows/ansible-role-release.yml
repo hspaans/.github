@@ -1,0 +1,21 @@
+---
+name: Ansible Role Release
+
+on:
+  workflow_call:
+    secrets:
+      access_token:
+        description: "Ansible Galaxy Access Token"
+        required: true
+jobs:
+  release:
+    name: Release to Ansible Galaxy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Release Ansible Role to Galaxy
+        uses: hspaans/ansible-galaxy-action@v1
+        with:
+          api_key: ${{ secrets.access_token }}
