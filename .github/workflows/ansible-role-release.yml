@@ -4,9 +4,10 @@ name: Ansible Role Release
 on:
   workflow_call:
     secrets:
-      access_token:
+      token:
         description: "Ansible Galaxy Access Token"
         required: true
+
 jobs:
   release:
     name: Release to Ansible Galaxy
@@ -18,4 +19,4 @@ jobs:
       - name: Release Ansible Role to Galaxy
         uses: hspaans/ansible-galaxy-action@v1
         with:
-          api_key: ${{ secrets.access_token }}
+          api_key: ${{ secrets.token }}
