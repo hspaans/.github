@@ -9,7 +9,7 @@ on:
         required: true
 
 jobs:
-  release:
+  publish:
     name: Release to Ansible Galaxy
     runs-on: ubuntu-latest
     steps:
@@ -20,3 +20,21 @@ jobs:
         uses: hspaans/ansible-galaxy-action@v1
         with:
           api_key: ${{ secrets.token }}
+
+  create-github-release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    needs: publish
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Create Release Notes
+        uses: actions/github-script@v4.0.2
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            await github.request(`POST /repos/${{ github.repository }}/releases`, {
+              tag_name: "${{ github.ref }}",
+              generate_release_notes: true
+            });
