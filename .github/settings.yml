@@ -1,8 +1,8 @@
 ---
 repository:
   name: .github
-  description: Github settings for this organization
-  topics: github, configuration
+  description: Github settings for this organization and its repositories
+  topics: github, configuration, github-actions
   is_template: false
 
   has_issues: true

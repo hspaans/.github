@@ -1,15 +1,33 @@
 # .github
 
+Github settings for this organization and its repositories following the [this guide].
+
+[this guide]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file
 
 ## Reusable workflows
 
-### Containers
-
-CI for a Container Image
+### Ansible Roles
 
 ```yaml
 ---
-name: Container CI
+name: CI
+
+on:
+  pull_request:
+  schedule:
+    - cron: '22 22 10 * *'
+
+jobs:
+  ansible-role-ci:
+    name: Ansible Role CI
+    uses: hspaans/.github/.github/workflows/ansible-role-ci.yml@master
+```
+
+### Containers
+
+```yaml
+---
+name: CI
 
 on:
   pull_request:
@@ -18,32 +36,25 @@ on:
 
 jobs:
   container-ci:
-    uses: hspaans/.github/.github/workflows/container-ci.yml@v0.2.0
+    name: Container CI
+    uses: hspaans/.github/.github/workflows/container-ci.yml@master
 ```
 
-Release a Container Image
+### Python
 
 ```yaml
 ---
-name: Container Release
+name: CI
 
 on:
-  push:
-    # Publish `master` as Docker `latest` image.
-    branches:
-      - master
-      - v*
-
-    # Publish `v1.2.3` tags as releases.
-    tags:
-      - v*
+  pull_request:
+  schedule:
+    - cron: '22 22 10 * *'
 
 jobs:
-  container-release:
-    uses: hspaans/.github/.github/workflows/container-release.yml@v0.1.2
-    with:
-      actor: ${{ github.actor }}
-      platforms: linux/amd64,linux/arm64
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  container-ci:
+    name: Container CI
+    uses: hspaans/.github/.github/workflows/python-ci.yml@master
 ```
+
+[this guide]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file
