@@ -42,6 +42,8 @@ jobs:
       - super-linter
     name: Anchore Container Scan
     runs-on: ubuntu-latest
+    permissions:
+      security-events: write
 
     steps:
       - name: Checkout the code
