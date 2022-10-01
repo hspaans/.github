@@ -2,8 +2,6 @@
 
 Github settings for this organization and its repositories following the [this guide].
 
-[this guide]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file
-
 ## Reusable workflows
 
 ### Ansible Roles
