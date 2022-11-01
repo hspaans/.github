@@ -56,7 +56,6 @@ jobs:
         uses: anchore/scan-action@v3.3.0
         with:
           image: "localbuild/testimage:latest"
-          acs-report-enable: true
           fail-build: false
 
       - name: Upload Anchore Scan Report
