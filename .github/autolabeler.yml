@@ -1,7 +1,10 @@
 ---
 tests: ["test"]
-docs: ["*.md", "docs/", "LICENSE"]
-config: [".github", ".gitignore", ".travis*", ".vscode", ".devcontainer"]
-
+docs: ["*.md", "*.rst", "docs/", "LICENSE"]
+config: [".github/", ".gitignore", ".vscode/", ".devcontainer/", ".editorconfig", ".yamllint.yml", ".ansible-lint"]
+terraform: ["terraform/", "*.tf", "*.lock.hcl"]
+ansible: ["ansible/", "ansible.cfg"]
+python: ["*.py", "requirements.txt"]
+php: ["*.php"]
 # Pull request has files in it that it shouldn't!
-broken: ["*.pem"]
+broken: ["*.pem", "*.jks"]
