@@ -7,5 +7,7 @@ ansible: ["ansible/", "ansible.cfg"]
 docker: ["Dockerfile", "docker-compose.yml"]
 python: ["*.py", "requirements.txt"]
 php: ["*.php", "composer.json", "composer.lock"]
+github: [".github/"]
+github_actions: [".github/workflows/"]
 # Pull request has files in it that it shouldn't!
 broken: ["*.pem", "*.jks"]
