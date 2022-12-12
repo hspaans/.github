@@ -6,6 +6,6 @@ terraform: ["terraform/", "*.tf", "*.lock.hcl"]
 ansible: ["ansible/", "ansible.cfg"]
 docker: ["Dockerfile", "docker-compose.yml"]
 python: ["*.py", "requirements.txt"]
-php: ["*.php"]
+php: ["*.php", "composer.json", "composer.lock"]
 # Pull request has files in it that it shouldn't!
 broken: ["*.pem", "*.jks"]
