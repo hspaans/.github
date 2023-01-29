@@ -26,14 +26,10 @@ jobs:
     strategy:
       matrix:
         python-version:
-          - '3.8'
           - '3.9'
           - '3.10'
           - '3.11'
         ansible-version:
-          - 'ansible>=4.0.0,<5.0.0'
-          - 'ansible>=5.0.0,<6.0.0'
-          - 'ansible>=6.0.0,<7.0.0'
           - 'ansible>=7.0.0,<8.0.0'
 
     steps:
