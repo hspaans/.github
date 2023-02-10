@@ -1,0 +1,18 @@
+---
+name: 'Close stale issues and PRs'
+
+on:
+  workflow_call:
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v7
+        with:
+          days-before-stale: 180
+          days-before-close: 90
+          exempt-all-milestones: true
+          exempt-issue-labels: security
+          exempt-pr-labels: security
+          stale-issue-label: stale
