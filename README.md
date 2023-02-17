@@ -23,7 +23,7 @@ permissions:
 jobs:
   stale:
     name: GitHub Action Stale
-    uses: hspaans/.github/.github/workflows/repository-stale.yml.yml@master
+    uses: hspaans/.github/.github/workflows/repository-stale.yml@master
 ```
 
 ### Ansible Roles
