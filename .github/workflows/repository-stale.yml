@@ -1,0 +1,25 @@
+---
+name: Reusable Stale Workflow
+
+on:
+  workflow_call:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale-reuasable:
+    name: Close stale issues and PRs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run GitHub Actions Stale
+        uses: actions/stale@v7
+        with:
+          days-before-stale: 180
+          days-before-close: 90
+          exempt-all-milestones: true
+          exempt-issue-labels: security
+          exempt-pr-labels: dependencies, security
+          stale-issue-label: stale

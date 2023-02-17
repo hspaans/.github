@@ -4,6 +4,28 @@ Github settings for this organization and its repositories following the [this g
 
 ## Reusable workflows
 
+### Close stale issues and PRs
+
+Scan the repository every night for stale issues and pull-requests to mark and close them.
+
+```yaml
+---
+name: Close stale issues and pull-requests
+
+on:
+  schedule:
+    - cron: '30 1 * * *'
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    name: GitHub Action Stale
+    uses: hspaans/.github/.github/workflows/repository-stale.yml@master
+```
+
 ### Ansible Roles
 
 ```yaml
