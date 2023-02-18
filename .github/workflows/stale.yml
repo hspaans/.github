@@ -12,4 +12,4 @@ permissions:
 jobs:
   stale:
     name: GitHub Action Stale
-    uses: hspaans/.github/.github/reusable-workflows/stale.yml@master
+    uses: hspaans/.github/.github/workflows/reusable-stale.yml@master
