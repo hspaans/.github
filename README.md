@@ -16,12 +16,11 @@ on:
   schedule:
     - cron: '30 1 * * *'
 
-permissions:
-  issues: write
-  pull-requests: write
-
 jobs:
   stale:
+    permissions:
+      issues: write
+      pull-requests: write
     name: GitHub Action Stale
     uses: hspaans/.github/.github/workflows/reusable-stale.yml@master
 ```
