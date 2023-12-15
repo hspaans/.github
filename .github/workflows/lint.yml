@@ -2,10 +2,7 @@
 name: Linting
 
 on:
-  pull_request:
-  push:
-    branches:
-      - master
+  workflow_call:
 
 jobs:
   lint:
@@ -36,8 +33,8 @@ jobs:
 
       - name: Add problem matcher
         run: |
-          echo "::add-matcher::.github/annotations//pymarkdown-problem-matcher.json"
+          echo "::add-matcher::.github/annotations/pymarkdown-problem-matcher.json"
 
       - name: Lint with pymarkdownlint
         run: |
-          pymarkdownlnt scan `git ls-files '*.md'`
+          pymarkdownlnt scan `git ls-files '*.md' ':!:*TEMPLATE/*md'`
