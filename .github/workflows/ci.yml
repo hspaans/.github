@@ -10,17 +10,4 @@ on:
 jobs:
   lint:
     name: Lint Code Base
-    # uses: hspaans/.github/.github/workflows/lint.yml@master
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Lint Code Base
-        uses: github/super-linter/slim@v5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_GITHUB_ACTIONS: false
-          VALIDATE_NATURAL_LANGUAGE: false
-          VALIDATE_MARKDOWN: false
+    uses: hspaans/.github/.github/workflows/lint.yml@master
