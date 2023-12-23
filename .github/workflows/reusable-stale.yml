@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Run GitHub Actions Stale
-        uses: actions/stale@v8
+        uses: actions/stale@v9
         with:
           days-before-stale: 180
           days-before-close: 90
