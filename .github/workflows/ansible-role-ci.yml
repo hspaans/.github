@@ -46,7 +46,6 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install "${{ matrix.ansible-version }}" ansible-lint molecule molecule-plugins[docker] docker flake8 flake8-bugbear flake8-docstrings flake8-import-order flake8-pylint flake8-github-annotations pytest pytest-testinfra yamllint
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          if [ -f requirements_dev.txt ]; then pip install -r requirements_dev.txt; fi
 
       - name: Lint with yamllint
         run: |
