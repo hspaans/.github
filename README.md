@@ -61,6 +61,13 @@ jobs:
 
 ### Python
 
+The Python workflow is used for all Python repositories. It has the following requirements:
+
+* ``requirements.txt`` in the root of the repository is used for all Python dependencies
+* Sphinx documentation in ``docs/`` (depending on ``requirements.txt`` and Python 3.10)
+* Pytest tests in ``tests/`` (depending on ``requirements.txt`` and runs on Python >=3.8)
+* Linting with flake8, yamllint (depending on ``requirements.txt`` and runs on default Python)
+
 ```yaml
 ---
 name: CI
@@ -71,8 +78,8 @@ on:
     - cron: '22 22 10 * *'
 
 jobs:
-  container-ci:
-    name: Container CI
+  python-ci:
+    name: Python CI
     uses: hspaans/.github/.github/workflows/python-ci.yml@master
 ```
 
