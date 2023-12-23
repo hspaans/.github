@@ -8,19 +8,20 @@ assignees: ''
 ---
 
 **Describe idea for a project**
+
 A clear and concise description of what the project goal is.
 
 **Requirements**
 
 - ...
 - ...
--
+- ...
 
 **Sources**
 
 - ...
 - ...
--
+- ...
 
 **Publication checklist**
 

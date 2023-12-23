@@ -6,7 +6,8 @@ Github settings for this organization and its repositories following the [this g
 
 ### Close stale issues and PRs
 
-Scan the repository every night for stale issues and pull-requests to mark and close them.
+Scan the repository every night for stale issues and pull-requests to mark and
+close them.
 
 ```yaml
 ---
