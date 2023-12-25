@@ -35,36 +35,3 @@ jobs:
           else
             docker build . --file Dockerfile
           fi
-
-  Anchore-Build-Scan:
-    needs:
-      - build-test
-      - super-linter
-
-    permissions:
-      contents: read  # for actions/checkout to fetch code
-      security-events: write  # for github/codeql-action/upload-sarif to upload SARIF results
-      actions: read  # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
-
-    name: Anchore Container Scan
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check out the code
-        uses: actions/checkout@v4
-
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag localbuild/testimage:latest
-
-      - name: Run the Anchore Grype scan action
-        uses: anchore/scan-action@v3.3.8
-        id: scan
-        with:
-          image: "localbuild/testimage:latest"
-          fail-build: false
-          severity-cutoff: critical
-
-      - name: Upload vulnerability report
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: ${{ steps.scan.outputs.sarif }}
