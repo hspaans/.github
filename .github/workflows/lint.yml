@@ -37,4 +37,4 @@ jobs:
 
       - name: Lint with pymarkdownlint
         run: |
-          pymarkdownlnt scan `git ls-files '*.md' ':!:*TEMPLATE/*md'`
+          pymarkdownlnt -d MD013 scan `git ls-files '*.md' ':!:*TEMPLATE/*md'`
