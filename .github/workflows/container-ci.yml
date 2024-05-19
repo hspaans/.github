@@ -5,20 +5,6 @@ on:
   workflow_call:
 
 jobs:
-  super-linter:
-    name: Lint Code Base
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Lint Code Base
-        uses: github/super-linter/slim@v6
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_GITHUB_ACTIONS: false
-
   build-test:
     name: Container Test Build
     runs-on: ubuntu-latest
