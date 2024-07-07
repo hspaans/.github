@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Release Ansible Role to Galaxy
-        uses: hspaans/ansible-galaxy-action@master
+        uses: hspaans/ansible-galaxy-action@v2.0.0
         with:
           api_key: ${{ secrets.token }}
 
