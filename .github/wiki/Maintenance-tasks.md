@@ -1,9 +1,9 @@
 Maintaining repositories is important to keep the relevant otherwise they must
 be archived. This way it allows to plan and rollout new features.
 
-## EoY 2024
+# EoY 2024
 
-### General actions
+## General actions
 
 - [ ]  Start pinning shared worflows
 - [ ]  Group Dependabot and ecosystems
@@ -73,23 +73,23 @@ jobs:
           fail-on-severity: critical
 ```
 
-### Repository .github
+## Repository .github
 
 - [ ]  Bump Ansible versions for Ansible Playbook CI
 - [ ]  Create a date based
 
-### Ansible Roles
+## Ansible Roles
 
 - [ ]  Add Ubuntu 24.04 to roles
 - [ ]  Add ``.gitattributes`` to repositories
 - [ ]  Add ``.devcontainer/devcontainer.json`` to repositories
 - [ ]  Remove the `schedule` trigger in ``.github/workflows/ci.yml``
 
-## SoC 2025
+# SoC 2025
 
 TBD
 
-## Open Items
+# Open Items
 
 - [ ]  ``ansible-lint`` should be installed for the Ansible Language Server
        to work correctly
@@ -97,9 +97,9 @@ TBD
        into workflows
   - [ ]  Create file ``OWNER/REPOSITORY/dependency-review-config.yml@master``
 
-## Roadmaps
+# Roadmaps
 
-### Merge Ansible Roles into an Ansible Collection
+## Merge Ansible Roles into an Ansible Collection
 
 Most Ansible Roles can be better merged in a generic Ansible Collection.
 
