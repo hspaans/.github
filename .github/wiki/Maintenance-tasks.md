@@ -3,7 +3,7 @@
 Maintaining repositories is important to keep the relevant otherwise they must
 be archived. This way it allows to plan and rollout new features.
 
-## EOY 2024
+## EoY 2024
 
 ### General actions
 
