@@ -3,28 +3,39 @@
 Maintaining repositories is important to keep the relevant otherwise they must
 be archived. This way it allows to plan and rollout new features.
 
-## Sprint 2024 Cleanup
+## EOY 2024
 
-### General actions for 2024
+### General actions
 
-- [ ]  Bump to Terraform 1.7
-- [ ]  Revert to `pip` instead of `pipenv` for Python projects
-- [ ]  Implement GitHub Action `pip-audit` for Python projects:
+- [ ]  Start pinning shared worflows
+- [ ]  Group Dependabot and ecosystems
 
 ```yaml
-  pip-audit:
-    name: Pip Audit
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+---
+version: 2
+updates:
+  - package-ecosystem: devcontainer
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      devcontainer:
+        patterns:
+          - "*"
 
-      - name: Run pip-audit
-        uses: pypa/gh-action-pip-audit@v1.0.8
-        with:
-          inputs: requirements.txt
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        patterns:
+          - "*"
 ```
 
+- [ ]  Bump to Terraform 1.9
+- [ ]  Revert to `pip` instead of `pipenv` for Python projects
+- [ ]  Drop GitHub Action `pip-audit` for Python projects as Dependabot can scan the SBOM
 - [ ]  Implement GitHub Action `dependency-review` for public projects:
 
 ```yaml
@@ -66,44 +77,19 @@ jobs:
 
 ### Repository .github
 
-- [ ]  Bump versions for Ansible Playbook CI
-- [ ]  Drop `.github/workflows/typescript-node-lint.yml` [#101](https://github.com/hspaans/.github/issues/101)
+- [ ]  Bump Ansible versions for Ansible Playbook CI
+- [ ]  Create a date based
 
-### Ansible Role
+### Ansible Roles
 
 - [ ]  Add Ubuntu 24.04 to roles
 - [ ]  Add ``.gitattributes`` to repositories
 - [ ]  Add ``.devcontainer/devcontainer.json`` to repositories
 - [ ]  Remove the `schedule` trigger in ``.github/workflows/ci.yml``
 
-### Molecule Container Images
+## SoC 2025
 
-- [ ]  Add Ubuntu 24.04
-
-## Autumn 2023 Cleanup
-
-### General actions for 2023
-
-- [ ]  Bump to Terraform 1.6
-- [ ]  Bump to Python 3.10
-- [ ]  Bump to Debian 12 (bookworm)
-
-### Repository .github
-
-- [ ]  Bump versions for Ansible Playbook CI
-
-### Ansible Role
-
-- [ ]  Drop Debian 10 (buster)
-- [ ]  Drop tmpfs from ``molecule/{debian,ubuntu}/molecule.yml``
-- [ ]  All plays should be named. ansible-lint(name[play])
-  - [ ]   ``tests/test.yml``
-- [ ]  use FQCN for builtin module actions: ``apt``, ``yum``, ``package``
-  - [ ]   ``molecule/resources/playbooks/prepare.yml``
-
-### Molecule Container Images
-
-None
+TBD
 
 ## Open Items
 
@@ -114,5 +100,9 @@ None
   - [ ]  Create file ``OWNER/REPOSITORY/dependency-review-config.yml@master``
 
 ## Roadmaps
+
+### Merge Ansible Roles into an Ansible Collection
+
+Most Ansible Roles can be better merged in a generic Ansible Collection.
 
 - [Ansible documentation](https://docs.ansible.com/ansible/devel/roadmap/ansible_roadmap_index.html)
