@@ -32,7 +32,6 @@ jobs:
             python-version: '3.11'
           - ansible-version: 'ansible>=11.0.0,<12.0.0'
             python-version: '3.12'
-        
 
     steps:
       - name: Check out the codebase
