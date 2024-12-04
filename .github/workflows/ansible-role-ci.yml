@@ -18,6 +18,20 @@ jobs:
         ansible-version:
           - 'ansible>=10.0.0,<11.0.0'
           - 'ansible>=11.0.0,<12.0.0'
+        exclude:
+          - ansible-version: 'ansible>=11.0.0,<12.0.0'
+            python-version: '3.10'
+        include:
+          - ansible-version: 'ansible>=10.0.0,<11.0.0'
+            python-version: '3.10'
+          - ansible-version: 'ansible>=10.0.0,<11.0.0'
+            python-version: '3.11'
+          - ansible-version: 'ansible>=10.0.0,<11.0.0'
+            python-version: '3.12'
+          - ansible-version: 'ansible>=11.0.0,<12.0.0'
+            python-version: '3.11'
+          - ansible-version: 'ansible>=11.0.0,<12.0.0'
+            python-version: '3.12'
 
     steps:
       - name: Check out the codebase
