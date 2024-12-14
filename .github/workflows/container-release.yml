@@ -24,7 +24,7 @@ jobs:
   container-release:
     # Ensure test job passes before pushing image.
     name: Build and Release
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout Code
