@@ -9,6 +9,7 @@ python: ["*.py", "requirements.txt", "Pipfile", "Pipfile.lock"]
 php: ["*.php", "*.phpt", "composer.json", "composer.lock"]
 github: [".github/"]
 github_actions: [".github/workflows/"]
+github_wiki: [".github/wiki/"]
 vscode: [".vscode/"]
 policy: [".github/ISSUE_TEMPLATE", ".github/PULL_TEMPLATE", "LICENSE", "SECURITY.md"]
 # Pull request has files in it that it shouldn't!

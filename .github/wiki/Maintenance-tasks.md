@@ -5,7 +5,7 @@ be archived. This way it allows to plan and rollout new features.
 
 ## General actions
 
-- [ ]  [Notice of upcoming releases and breaking changes for GitHub Actions](https://github.blog/changelog/2024-12-05-notice-of-upcoming-releases-and-breaking-changes-for-github-actions/)
+- [X]  [Notice of upcoming releases and breaking changes for GitHub Actions](https://github.blog/changelog/2024-12-05-notice-of-upcoming-releases-and-breaking-changes-for-github-actions/)
 - [ ]  Start pinning shared worflows
 - [ ]  Group Dependabot and ecosystems
 
@@ -76,8 +76,8 @@ jobs:
 
 ## Repository .github
 
-- [ ]  Bump Ansible versions for Ansible Playbook CI
-- [ ]  Create a date based
+- [X]  Bump Ansible versions for Ansible Playbook CI
+- [X]  Create a date based
 
 ## Ansible Roles
 
