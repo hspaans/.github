@@ -82,9 +82,9 @@ jobs:
 ## Ansible Roles
 
 - [ ]  Add Ubuntu 24.04 to roles
-- [ ]  Add ``.gitattributes`` to repositories
+- [X]  Add ``.gitattributes`` to repositories (all removed)
 - [ ]  Add ``.devcontainer/devcontainer.json`` to repositories
-- [ ]  Remove the `schedule` trigger in ``.github/workflows/ci.yml``
+- [X]  Remove the `schedule` trigger in ``.github/workflows/ci.yml``
 
 # SoC 2025
 
