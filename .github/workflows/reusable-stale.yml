@@ -11,7 +11,7 @@ permissions:
 jobs:
   stale-reuasable:
     name: Close stale issues and PRs
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Run GitHub Actions Stale
