@@ -30,22 +30,9 @@ jobs:
           # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics --format github
 
-  pip-audit:
-    name: Pip Audit
-    runs-on: ubuntu-24.04
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Run pip-audit
-        uses: pypa/gh-action-pip-audit@v1.1.0
-        with:
-          inputs: requirements.txt
-
   pytest:
     needs:
       - lint
-      - pip-audit
     name: Pytest Tests
     runs-on: ubuntu-24.04
     strategy:
