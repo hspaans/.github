@@ -81,8 +81,9 @@ jobs:
 
 ## Ansible Roles
 
+- [ ]  Remove Debian 10 from roles
 - [ ]  Add Ubuntu 24.04 to roles
-- [ ]  Add ``.gitattributes`` to repositories
+- [X]  Remove ``.gitattributes`` to repositories
 - [ ]  Add ``.devcontainer/devcontainer.json`` to repositories
 - [ ]  Remove the `schedule` trigger in ``.github/workflows/ci.yml``
 
