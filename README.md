@@ -73,7 +73,7 @@ The Python workflow is used for all Python repositories. It has the following re
 - `requirements.txt` in the root of the repository is used for all Python dependencies
 - Sphinx documentation in `docs/` (depending on `requirements.txt` and Python 3.10)
 - Pytest tests in `tests/` (depending on `requirements.txt` and runs on Python >=3.8)
-- Linting with flake8, yamllint (depending on `requirements.txt` and runs on default Python)
+- Linting with flake8, yamllint (depending on `requirements.txt`)
 
 ```yaml
 ---
