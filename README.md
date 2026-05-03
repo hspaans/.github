@@ -1,6 +1,12 @@
-# .github
+# hspaans/.github
 
 Github settings for this organization and its repositories following the [this guide].
+
+## Wiki
+
+The personal [Wiki](https://github.com/hspaans/.github/wiki) hosts most
+documentation that has outgrown [GitHub Gist](https://gist.github.com/hspaans)
+or is stable for regular usage.
 
 ## Reusable workflows
 
@@ -15,7 +21,7 @@ name: Close stale issues and pull-requests
 
 on:
   schedule:
-    - cron: '30 1 * * *'
+    - cron: "30 1 * * *"
 
 jobs:
   stale:
@@ -35,7 +41,7 @@ name: CI
 on:
   pull_request:
   schedule:
-    - cron: '22 22 10 * *'
+    - cron: "22 22 10 * *"
 
 jobs:
   ansible-role-ci:
@@ -52,7 +58,7 @@ name: CI
 on:
   pull_request:
   schedule:
-    - cron: '22 22 10 * *'
+    - cron: "22 22 10 * *"
 
 jobs:
   container-ci:
@@ -64,10 +70,10 @@ jobs:
 
 The Python workflow is used for all Python repositories. It has the following requirements:
 
-* ``requirements.txt`` in the root of the repository is used for all Python dependencies
-* Sphinx documentation in ``docs/`` (depending on ``requirements.txt`` and Python 3.10)
-* Pytest tests in ``tests/`` (depending on ``requirements.txt`` and runs on Python >=3.8)
-* Linting with flake8, yamllint (depending on ``requirements.txt`` and runs on default Python)
+- `requirements.txt` in the root of the repository is used for all Python dependencies
+- Sphinx documentation in `docs/` (depending on `requirements.txt` and Python 3.10)
+- Pytest tests in `tests/` (depending on `requirements.txt` and runs on Python >=3.8)
+- Linting with flake8, yamllint (depending on `requirements.txt` and runs on default Python)
 
 ```yaml
 ---
@@ -76,7 +82,7 @@ name: CI
 on:
   pull_request:
   schedule:
-    - cron: '22 22 10 * *'
+    - cron: "22 22 10 * *"
 
 jobs:
   python-ci:
