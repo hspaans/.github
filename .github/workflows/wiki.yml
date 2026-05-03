@@ -36,7 +36,7 @@ jobs:
         run: |
           set -e
           cd "$GITHUB_WORKSPACE/${{github.repository}}.wiki"
-          rsync -a --delete "$GITHUB_WORKSPACE/${{github.repository}}/.github/wiki/" ./
+          rsync -a --delete --exclude='.git/' "$GITHUB_WORKSPACE/${{github.repository}}/.github/wiki/" ./
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
