@@ -1,6 +1,6 @@
 # hspaans/.github
 
-Github settings for this organization and its repositories following the [this guide].
+GitHub settings for this organization and its repositories following [this guide].
 
 ## Wiki
 

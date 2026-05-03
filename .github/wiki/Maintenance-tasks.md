@@ -1,12 +1,12 @@
-Maintaining repositories is important to keep the relevant otherwise they must
-be archived. This way it allows to plan and rollout new features.
+Maintaining repositories is important to keep them relevant; otherwise, they
+should be archived. This helps plan and roll out new features.
 
 # EoY 2024
 
 ## General actions
 
 - [X]  [Notice of upcoming releases and breaking changes for GitHub Actions](https://github.blog/changelog/2024-12-05-notice-of-upcoming-releases-and-breaking-changes-for-github-actions/)
-- [ ]  Start pinning shared worflows
+- [ ]  Start pinning shared workflows
 - [ ]  Group Dependabot and ecosystems
 
 ```yaml
@@ -77,7 +77,7 @@ jobs:
 ## Repository .github
 
 - [X]  Bump Ansible versions for Ansible Playbook CI
-- [X]  Create a date based
+- [X]  Create a date based naming scheme
 
 ## Ansible Roles
 
