@@ -1,3 +1,5 @@
 Welcome to the .github wiki!
 
-- [Python Development](https://github.com/hspaans/.github/wiki/Python-Development)
+- [Development](Development)
+  - [Java Development](Java-Development)
+  - [Python Development](Python-Development)
