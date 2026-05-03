@@ -7,15 +7,13 @@ on:
 jobs:
   lint:
     name: Lint Code Base
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v6
 
       - name: Set up Python
         uses: actions/setup-python@v6
-        with:
-          python-version: '3.12'
 
       - name: Install dependencies
         run: |
@@ -39,4 +37,4 @@ jobs:
 
       - name: Lint with pymarkdownlint
         run: |
-          pymarkdownlnt scan `git ls-files '*.md' ':!:*TEMPLATE/*md'`
+          pymarkdownlnt scan `git ls-files '*.md' ':!:.github/*/*md'`
